@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <students>
     <student id="123456">
-        <id value ="world123456"/>
+        <id value="world123456"/>
         <name>Nguyen Hello World</name>
         <birthday>66/66/6666</birthday>
         <address>Ha Noi</address>
