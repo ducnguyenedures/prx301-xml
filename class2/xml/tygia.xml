@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExRate xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="./../xsd/tygia.xsd">
+    <Coin Symbol="AUD">
+        <Name>AUST.DOLLAR</Name>
+        <Buy>13789.73</Buy>
+        <Transfer>13872.97</Transfer>
+        <Release>14103.10</Release>
+    </Coin>
+</ExRate>

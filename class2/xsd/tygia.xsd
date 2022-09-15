@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           version="1.0">
+    <xs:element name="ExRate">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Coin" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="Name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="(.*[A-Z].*)(?=.*\W.*) "/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Buy">
+                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:float">
+                                                <xs:minExclusive value="0"></xs:minExclusive>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value=""></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Transfer" type="xs:float"></xs:element>
+                            <xs:element name="Release">
+                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:float">
+                                                <xs:minExclusive value="0"></xs:minExclusive>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value=""></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Symbol">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="[A-Z][A-Z][A-Z]"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
